@@ -1,0 +1,7 @@
+export enum CoffeeTags {
+  TRADITIONAL = "TRADICIONAL",
+  COLD = "GELADO",
+  WITH_MILK = "COM LEITE",
+  SPECIAL = "ESPECIAL",
+  ALCOLIC = "ALCÓOLICO",
+}
