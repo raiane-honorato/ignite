@@ -12,7 +12,54 @@ export const defaultTheme = {
   "base-hover": "#D7D5D5",
   "base-button": "#E6E5E5",
   "base-input": "#EDEDED",
-  "base-card": "#F3F2F2",
+  "base-cart": "#F3F2F2",
   background: "#FAFAFA",
   white: "#FFFFFF",
+
+  textStyles: {
+    titleXl: {
+      fontSize: "3rem",
+      fontFamily: '"Baloo 2", sans-serif',
+      lineHeight: "130%",
+    },
+    titleM: {
+      fontSize: "1.5rem",
+      fontFamily: '"Baloo 2", sans-serif',
+      lineHeight: "130%",
+      fontWeight: "extra-bold",
+    },
+    regularL: {
+      fontSize: "1.25rem",
+      fontFamily: '"Roboto", sans-serif',
+      lineHeight: "130%",
+    },
+    regularM: {
+      fontSize: "1rem",
+      fontFamily: '"Roboto", sans-serif',
+      lineHeight: "130%",
+    },
+    regularS: {
+      fontSize: "0.875rem",
+      fontFamily: '"Roboto", sans-serif',
+      lineHeight: "130%",
+    },
+    textXs: {
+      fontSize: "0.75rem",
+      fontFamily: '"Roboto", sans-serif',
+      lineHeight: "130%",
+      fontWeight: "bold",
+    },
+    tag: {
+      fontSize: "0.75rem",
+      lineHeight: "130%",
+      fontFamily: '"Roboto", sans-serif',
+      fontWeight: "bold",
+    },
+    balooTitleS: {
+      fontSize: "1.25rem",
+      lineHeight: "130%",
+      fontWeight: "bold",
+      fontFamily: '"Baloo 2", sans-serif',
+    },
+  },
 };

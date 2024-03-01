@@ -1,6 +1,6 @@
-import { Card } from "../../domains/Card";
+import { Cart } from "../../domains/Cart";
 
-export const initialCard: Card = {
+export const initialCart: Cart = {
   selectedItems: [],
   address: undefined,
   selectedPaymentMethod: undefined,

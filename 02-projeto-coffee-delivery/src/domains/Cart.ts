@@ -1,7 +1,7 @@
 import { CoffeeItem } from "./CoffeeItem";
 import { PaymentMethod } from "./PaymentMethod";
 
-export interface CardItem {
+export interface CartItem {
   coffee: CoffeeItem;
   amount: number;
 }
@@ -13,10 +13,12 @@ export interface Address {
   city: string;
   state: string;
   postalCode: string;
+  latitude?: number;
+  longitude?: number;
 }
 
-export interface Card {
-  selectedItems: Array<CardItem>;
+export interface Cart {
+  selectedItems: Array<CartItem>;
   address?: Address;
   selectedPaymentMethod?: PaymentMethod;
 }

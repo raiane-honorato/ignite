@@ -1,4 +1,4 @@
-import { Address } from "../../../domains/Card";
+import { Address } from "../../../domains/Cart";
 import { CoffeeItem } from "../../../domains/CoffeeItem";
 import { PaymentMethod } from "../../../domains/PaymentMethod";
 import {

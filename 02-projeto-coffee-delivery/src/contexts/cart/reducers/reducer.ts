@@ -1,5 +1,5 @@
 import { produce } from "immer";
-import { Card } from "../../../domains/Card";
+import { Cart } from "../../../domains/Cart";
 import {
   ActionProp,
   ActionTypes,
@@ -7,7 +7,7 @@ import {
   RemoveItemActionProp,
 } from "./actionTypes";
 
-const addNewItem = (state: Card, action: AddItemActionProp) =>
+const addNewItem = (state: Cart, action: AddItemActionProp) =>
   produce(state, (draftState) => {
     const itemIndex = draftState.selectedItems.findIndex(
       (item) => item.coffee.id === action.payload.coffee.id
@@ -22,7 +22,7 @@ const addNewItem = (state: Card, action: AddItemActionProp) =>
     }
   });
 
-const removeItem = (state: Card, action: RemoveItemActionProp) =>
+const removeItem = (state: Cart, action: RemoveItemActionProp) =>
   produce(state, (draftState) => {
     const itemIndex = draftState.selectedItems.findIndex(
       (item) => item.coffee.id === action.payload.coffee.id
@@ -35,7 +35,7 @@ const removeItem = (state: Card, action: RemoveItemActionProp) =>
     }
   });
 
-export const cardReducer = (state: Card, action: ActionProp) => {
+export const cartReducer = (state: Cart, action: ActionProp) => {
   switch (action.type) {
     case ActionTypes.ADD_ITEM:
       return addNewItem(state, action);
