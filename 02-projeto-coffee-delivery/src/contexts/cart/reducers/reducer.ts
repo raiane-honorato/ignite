@@ -4,7 +4,7 @@ import {
   ActionProp,
   ActionTypes,
   AddItemActionProp,
-  RemoveItemActionProp,
+  ChangeItemAmountActionProp,
 } from "./actionTypes";
 
 const addNewItem = (state: Cart, action: AddItemActionProp) =>
@@ -22,13 +22,13 @@ const addNewItem = (state: Cart, action: AddItemActionProp) =>
     }
   });
 
-const removeItem = (state: Cart, action: RemoveItemActionProp) =>
+const changeItemAmount = (state: Cart, action: ChangeItemAmountActionProp) =>
   produce(state, (draftState) => {
     const itemIndex = draftState.selectedItems.findIndex(
       (item) => item.coffee.id === action.payload.coffee.id
     );
     if (itemIndex >= 0) {
-      draftState.selectedItems[itemIndex].amount -= action.payload.amount;
+      draftState.selectedItems[itemIndex].amount = action.payload.amount;
       if (draftState.selectedItems[itemIndex].amount <= 0) {
         draftState.selectedItems.splice(itemIndex, 1);
       }
@@ -39,8 +39,8 @@ export const cartReducer = (state: Cart, action: ActionProp) => {
   switch (action.type) {
     case ActionTypes.ADD_ITEM:
       return addNewItem(state, action);
-    case ActionTypes.REMOVE_ITEM:
-      return removeItem(state, action);
+    case ActionTypes.CHANGE_ITEM_AMOUNT:
+      return changeItemAmount(state, action);
     case ActionTypes.SET_ADDRESS:
       return { ...state, address: action.payload.address };
     case ActionTypes.SET_PAYMENT_METHOD:

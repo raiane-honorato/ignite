@@ -5,7 +5,7 @@ import { PaymentMethod } from "../../domains/PaymentMethod";
 export interface CartContextType {
   cartState: Cart;
   addItemToCart: (coffee: CoffeeItem, amount: number) => void;
-  removeItemFromCart: (coffee: CoffeeItem, amount: number) => void;
+  changeItemAmountInCart: (coffee: CoffeeItem, amount: number) => void;
   setCartAddress: (address: Address) => void;
   setCartPaymentMethod: (paymentMethod: PaymentMethod) => void;
 }

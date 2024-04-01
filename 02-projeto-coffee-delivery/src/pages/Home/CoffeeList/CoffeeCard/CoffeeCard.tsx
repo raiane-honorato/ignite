@@ -15,6 +15,11 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeItem }) {
     })
     .slice(3);
 
+  const handleClickCartButton = () => {
+    addItemToCart(coffee, amount);
+    setAmount(1);
+  };
+
   return (
     <ItemContainer>
       <img src={coffee.image} />
@@ -45,15 +50,8 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeItem }) {
             min={1}
             max={60}
           />
-          <button>
-            <ShoppingCart
-              size={22}
-              weight="fill"
-              color="white"
-              onClick={() => {
-                addItemToCart(coffee, amount);
-              }}
-            />
+          <button onClick={handleClickCartButton}>
+            <ShoppingCart size={22} weight="fill" color="white" />
           </button>
         </div>
       </div>

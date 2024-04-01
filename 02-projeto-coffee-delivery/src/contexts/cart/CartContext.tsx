@@ -6,7 +6,7 @@ import { CartContextProviderProps, CartContextType } from "./CartContext.types";
 import { initialCart } from "./InitialCart";
 import {
   addItem,
-  removeItem,
+  changeItemAmount,
   setAddress,
   setPaymentMethod,
 } from "./reducers/actions";
@@ -34,7 +34,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   );
 
   useEffect(() => {
-    console.log("cartState", cartState);
     const stateJSON = JSON.stringify(cartState);
 
     localStorage.setItem(cartStateKey, stateJSON);
@@ -44,8 +43,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     dispatch(addItem(coffee, amount));
   }
 
-  function removeItemFromCart(coffee: CoffeeItem, amount: number) {
-    dispatch(removeItem(coffee, amount));
+  function changeItemAmountInCart(coffee: CoffeeItem, amount: number) {
+    dispatch(changeItemAmount(coffee, amount));
   }
 
   function setCartAddress(address: Address) {
@@ -59,7 +58,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   const cartContext: CartContextType = {
     cartState,
     addItemToCart,
-    removeItemFromCart,
+    changeItemAmountInCart,
     setCartAddress,
     setCartPaymentMethod,
   };

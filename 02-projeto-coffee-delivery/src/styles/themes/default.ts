@@ -28,15 +28,23 @@ export const defaultTheme = {
       lineHeight: "130%",
       fontWeight: "extra-bold",
     },
+    titleXS: {
+      fontSize: "1.125rem",
+      fontFamily: '"Baloo 2", sans-serif',
+      lineHeight: "130%",
+      fontWeight: "bold",
+    },
     regularL: {
       fontSize: "1.25rem",
       fontFamily: '"Roboto", sans-serif',
       lineHeight: "130%",
+      fontWeight: "normal",
     },
     regularM: {
       fontSize: "1rem",
       fontFamily: '"Roboto", sans-serif',
       lineHeight: "130%",
+      fontWeight: "normal",
     },
     regularS: {
       fontSize: "0.875rem",

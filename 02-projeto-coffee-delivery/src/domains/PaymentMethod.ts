@@ -3,3 +3,9 @@ export enum PaymentMethod {
   DEBIT_CARD = "DEBIT_CARD",
   MONEY = "MONEY",
 }
+
+export const paymentMethodDescription = {
+  [PaymentMethod.CREDIT_CARD]: "Cartão de crédito",
+  [PaymentMethod.DEBIT_CARD]: "Cartão de débito",
+  [PaymentMethod.MONEY]: "Dinheiro",
+};

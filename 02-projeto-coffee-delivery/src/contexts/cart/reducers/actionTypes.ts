@@ -4,7 +4,7 @@ import { PaymentMethod } from "../../../domains/PaymentMethod";
 
 export enum ActionTypes {
   ADD_ITEM = "ADD_ITEM",
-  REMOVE_ITEM = "REMOVE_ITEM",
+  CHANGE_ITEM_AMOUNT = "CHANGE_ITEM_AMOUNT",
   SET_ADDRESS = "SET_ADDRESS",
   SET_PAYMENT_METHOD = "SET_PAYMENT_METHOD",
 }
@@ -14,7 +14,7 @@ interface AddItemPayload {
   amount: number;
 }
 
-interface RemoveItemPayload {
+interface ChangeItemAmountPayload {
   coffee: CoffeeItem;
   amount: number;
 }
@@ -32,9 +32,9 @@ export interface AddItemActionProp {
   payload: AddItemPayload;
 }
 
-export interface RemoveItemActionProp {
-  type: ActionTypes.REMOVE_ITEM;
-  payload: RemoveItemPayload;
+export interface ChangeItemAmountActionProp {
+  type: ActionTypes.CHANGE_ITEM_AMOUNT;
+  payload: ChangeItemAmountPayload;
 }
 
 export interface SetAddressActionProp {
@@ -49,6 +49,6 @@ export interface SetPaymentMethodActionProp {
 
 export type ActionProp =
   | AddItemActionProp
-  | RemoveItemActionProp
+  | ChangeItemAmountActionProp
   | SetAddressActionProp
   | SetPaymentMethodActionProp;

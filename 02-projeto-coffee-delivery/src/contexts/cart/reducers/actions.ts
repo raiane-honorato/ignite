@@ -4,7 +4,7 @@ import { PaymentMethod } from "../../../domains/PaymentMethod";
 import {
   ActionTypes,
   AddItemActionProp,
-  RemoveItemActionProp,
+  ChangeItemAmountActionProp,
   SetAddressActionProp,
   SetPaymentMethodActionProp,
 } from "./actionTypes";
@@ -19,12 +19,12 @@ export function addItem(coffee: CoffeeItem, amount: number): AddItemActionProp {
   };
 }
 
-export function removeItem(
+export function changeItemAmount(
   coffee: CoffeeItem,
   amount: number
-): RemoveItemActionProp {
+): ChangeItemAmountActionProp {
   return {
-    type: ActionTypes.REMOVE_ITEM,
+    type: ActionTypes.CHANGE_ITEM_AMOUNT,
     payload: {
       coffee,
       amount,

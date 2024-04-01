@@ -33,6 +33,15 @@ export const GlobalStyle = createGlobalStyle`
 	cursor: pointer;
 	outline: inherit;
  }
+
+ button, a {
+  transition: all 0.2s ease-in-out;
+ }
+
+ button:hover, a:hover {
+    filter: brightness(60%);
+  }
+
 `;
 
 export const media = {

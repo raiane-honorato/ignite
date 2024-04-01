@@ -19,8 +19,6 @@ export function useGetUserLocation() {
 
       const { city, state } = await getAddressFroomLatLng(latitude, longitude);
 
-      console.log(city, state);
-
       setCartAddress({
         street: "",
         number: "",
@@ -36,6 +34,7 @@ export function useGetUserLocation() {
 
   useEffect(() => {
     getUserLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 }
 
@@ -65,5 +64,8 @@ const isLocationSetInAddress = (
   latitude: number,
   longitude: number
 ): boolean => {
-  return address?.latitude === latitude && address?.longitude === longitude;
+  return (
+    address?.latitude?.toFixed(2) === latitude.toFixed(2) &&
+    address?.longitude?.toFixed(2) === longitude.toFixed(2)
+  );
 };
