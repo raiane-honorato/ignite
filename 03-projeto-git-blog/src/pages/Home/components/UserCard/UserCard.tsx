@@ -38,7 +38,6 @@ import { useGetUserInformation } from "./useGetUserInformation";
 
 export function UserCard() {
   const userInfo = useGetUserInformation();
-  console.log("userInfo", userInfo);
 
   function loadCardInfo() {
     if (userInfo.userIsLoading) {

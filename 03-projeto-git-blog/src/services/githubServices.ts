@@ -6,7 +6,7 @@ function getUser(userName: string) {
 
 function getUserRepos(userName: string, searchTerms: string) {
   return api.get(`/search/repositories`, {
-    params: { q: `${searchTerms}%20user:${userName}` },
+    params: { q: `${searchTerms} user:${userName}` },
   });
 }
 
